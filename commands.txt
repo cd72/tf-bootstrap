@@ -1,4 +1,9 @@
 terraform init
 git pull && terraform validate
-terraform plan -var-file=./x.tfvars
-terraform apply "./terraform.out"
+terraform plan -var-file=./x.tfvars -out ./tfplan.out
+terraform apply ./tfplan.out
+terraform state list
+terraform state show xxxx
+
+terraform state show data.aws_caller_identity.current
+aws s3 cp terraform.tfstate s3://xxxxxxxxxxxx-terraform-state/tf-bootstrap/terraform.tfstate
