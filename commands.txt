@@ -1,4 +1,4 @@
 terraform init
-terraform validate
+git pull && terraform validate
 terraform plan -var-file=./x.tfvars
 terraform apply "./terraform.out"
