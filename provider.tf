@@ -1,3 +1,13 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.58"
+    }
+  }
+}
+
 provider "aws" {
-  region = "eu-west-2"
+  profile = "default"
+  region  = "eu-west-2"
 }
