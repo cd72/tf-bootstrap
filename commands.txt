@@ -6,4 +6,6 @@ terraform state list
 terraform state show xxxx
 
 terraform state show data.aws_caller_identity.current
-sh ./tf.s3command.sh
+
+mv backend.tf.gen backend.tf
+terraform init -migrate-state
